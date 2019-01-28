@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import './Plans.css';
-export default class Plans extends Component {
+import './Compare.css';
+export default class Compare extends Component {
     render() {
         return (
-            <div className='Plans'> 
-                <div className='plansTitle'><h1>Plans</h1></div>
-                <p>See which plans work for you</p>
+            <div className='Compare'> 
+                <div className='compareTitle'><h1>Compare</h1></div>
+                {/* <div className='compareMessage'><p>See the differences in plans</p></div> */}
+                
                 <div className="plan1">
                 <h3>Bronze</h3>
                 <h5>Accounts Payable(AP) or Accounts Recievable(AR)</h5>
@@ -42,8 +43,9 @@ export default class Plans extends Component {
                 </p>
                 <p>Price: $2000</p>
                 <button>Signup</button>
-                <Link to="/compare"><button>Compare</button></Link>
                 </div>
+                <Link to="/plans"><button>Plans</button></Link>
+                
                 
             </div> 
         )

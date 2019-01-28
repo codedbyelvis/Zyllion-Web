@@ -1,11 +1,11 @@
-.Plans {
+.Compare {
     display: grid;
     grid-template-rows: 10% 1fr;
     grid-template-columns: .3fr .3fr .3fr;
     align-items: center;
 }
 
-.plansTitle {
+.compareTitle {
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 2;
@@ -13,7 +13,7 @@
     grid-column-gap: 250px;
 }
 
-.plansMessage {
+.compareMessage {
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 1;

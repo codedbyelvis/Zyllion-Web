@@ -1,0 +1,8 @@
+.About {
+    height: 100%;
+    display: grid;
+    /* grid-template-rows: 400px 400px 400px;
+    grid-template-columns: 400px 400px 400px; */
+    text-align: center;
+    align-items: center;
+}
