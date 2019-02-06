@@ -3,9 +3,10 @@ import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Plans from "./components/Plans/Plans";
 import Compare from "./components/Compare/Compare";
+import Signup from "./components/Signup/Signup";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
-import zyllion_logo from "./components/Home/ZHome.png";
+import zyllion_logo from "./components/Home/Logo.png";
 import './App.css';
 
 class App extends Component {
@@ -83,6 +84,7 @@ class App extends Component {
               <Route component={Home} exact path="/" />
               <Route component={Plans} path="/plans" />
               <Route component={Compare} path="/compare" />
+              <Route component={Signup} path="/signup" />
               <Route component={About} path="/about" />
               <Route component={Contact} path="/contact" />
             </Switch>

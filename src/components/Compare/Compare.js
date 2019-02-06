@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import './Compare.css';
 export default class Compare extends Component {
+
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
+    
     render() {
         return (
             <div className='Compare'> 
                 <div className='compareTitle'><h1>Compare</h1></div>
-                {/* <div className='compareMessage'><p>See the differences in plans</p></div> */}
+                <h3>Compare price points and see what each plan entails.</h3>
                 
                 <div className="plan1">
                 <h3>Bronze</h3>
