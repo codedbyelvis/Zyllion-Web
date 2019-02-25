@@ -11,22 +11,44 @@ export default class About extends Component {
 
     render() {
         return (
-            <div className='About'>
-                <h1 className='aboutTitle'>About us</h1>
-                <img className='Icon1' src={Icon1} alt=""/>
-                <h1 className='AboutTitle1'>SELF-ONBOARDING</h1>
-                <p>Stop asking vendors to send you their bank information and W9s. Onboard them through Zyllion</p>
+            // <div className='About'>
+            //     <h1 className='aboutTitle'>About us</h1>
+            //     <img className='Icon1' src={Icon1} alt=""/>
+            //     <h1 className='AboutTitle1'>SELF-ONBOARDING</h1>
+            //     <p>Stop asking vendors to send you their bank information and W9s. Onboard them through Zyllion</p>
 
+            //     <img className='Icon2' src={Icon2} alt=""/>
+            //     <h1 className='AboutTitle2'>PAYMENT</h1>
+            //     <p>Speed the amount of time it takes to get your payments processed.
+            //         Automated Clearing House(ACH) payments, wire payments, and checks are riddled with errors and end up costing you a lot of money. 
+            //         Making payments through blockchain is faster, secure, and virtually free.</p>
+
+            //     <img className='Icon3' src={Icon3} alt=""/>                
+            //     <h1 className='AboutTitle3'>AUDITS/BANK RECONCILIATION</h1>
+            //     <p>Keep an immutable record for all of your payments and enable automated bank reconciliations.</p>
+            //     </div> 
+                <div className='About'>
+                <h1 className='aboutTitle'>Why Zyllion?</h1>
+                
+                <img className='Icon1' src={Icon1} alt=""/>
                 <img className='Icon2' src={Icon2} alt=""/>
-                <h1 className='AboutTitle2'>PAYMENT</h1>
+                <img className='Icon3' src={Icon3} alt=""/> 
+                               
+                <div className='AboutTitle1'><h1 >SELF-ONBOARDING</h1>
+                <p>Stop asking vendors to send you their bank information and W9s. Onboard them through Zyllion</p>
+                </div>
+                
+                <div className='AboutTitle2'><h1 >PAYMENT</h1>
                 <p>Speed the amount of time it takes to get your payments processed.
                     Automated Clearing House(ACH) payments, wire payments, and checks are riddled with errors and end up costing you a lot of money. 
                     Making payments through blockchain is faster, secure, and virtually free.</p>
+                </div>
 
-                <img className='Icon3' src={Icon3} alt=""/>                
-                <h1 className='AboutTitle3'>AUDITS/BANK RECONCILIATION</h1>
+                <div className='AboutTitle3'><h1 >AUDITS/BANK RECONCILIATION</h1>
                 <p>Keep an immutable record for all of your payments and enable automated bank reconciliations.</p>
-            </div> 
+                </div>
+                
+                </div> 
         )
     }
 }

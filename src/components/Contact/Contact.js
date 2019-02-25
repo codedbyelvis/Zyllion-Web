@@ -13,18 +13,45 @@ export default class Contact extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.baseState=this.state;
       }
 
       componentDidMount() {
-        window.scrollTo(0, 0);
-    }
+          window.scrollTo(0, 0);
+        }
+        
+        trying() {
+            console.log('please');
+        }
+
+      resetForm() {  
+        console.log('por favor');
+        document.getElementById('contact-form').reset();
+        }
+        
+        resetform = () => {
+            this.setState(this.baseState)
+          };
+
+          Work() {
+              console.log('zerror');
+            this.handleSubmit().catch((error) => {
+                console.log(error);
+                console.log('error');
+            });
+            console.log('berror');
+            this.resetForm().catch((error) => {
+                console.log(error);
+                console.log('terror');
+            });
+          }
     
       handleChange (e) {
         this.setState({ [e.target.name]: e.target.value });
       }
 
       async handleSubmit(e) {
-          e.preventDefault()
+          e.preventDefault();
 
           const { firstName, lastName, email, subject, message } =this.state;
 
@@ -36,32 +63,43 @@ export default class Contact extends Component {
               subject,
               message
           })
-
       }
       
     render() {
         return (
             <div className='Contact'>
                 <h1 className='ContactTitle'>Contact</h1>
-                <h3>Questions about blockchain or when we plan to launch? No problem. 
+                <h3 className='Contactinfo'>Questions about blockchain or when we plan to launch? No problem. 
                     Drop us a line and we will get back to you.</h3>
-            <form onSubmit={this.handleSubmit}>
-                <label>First Name</label>
-                <input type="text" name="firstName" onChange={this.handleChange} />
+            <form id='contact-form' onSubmit={this.handleSubmit}>
+                <div className='AboutInput'>
+                <label>First Name</label></div>
+                <div>
+                <input type="text" name="firstName" onChange={this.handleChange} required/></div>
 
-                <label>Last Name</label>
-                <input type="text" name="lastName" onChange={this.handleChange} />
+                <div>
+                <label>Last Name</label></div>
+                <div>
+                <input type="text" name="lastName" onChange={this.handleChange} required/></div>
 
-                <label>Email</label>
-                <input type="email" name="email" onChange={this.handleChange} />
+                <div>
+                <label>Email</label></div>
+                <div>
+                <input type="email" name="email" onChange={this.handleChange} required/></div>
 
-                <label>Subject</label>
-                <input type="text" name="subject" onChange={this.handleChange} />
+                <div>
+                <label>Subject</label></div>
+                <div>
+                <input type="text" name="subject" onChange={this.handleChange} required/></div>
 
-                <label>Message</label>
-                <input type="text" name="message" onChange={this.handleChange} />
+                <div>
+                <label>Message</label></div>
+                <div>
+                <input type="textarea" name="message" onChange={this.handleChange} required/></div>
 
-            <button>Submit</button>
+                <div>
+                {/* <button onClick={setTimeout(this.resetForm, 3000)}>Submit</button> */}
+                <input type="submit" id='submit' value="Submit" action='this.resetForm'/></div>
 
             </form>
             </div> 

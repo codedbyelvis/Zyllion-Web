@@ -27,7 +27,6 @@ app.post('/api/form', (req,res) => {
                 <p>${req.body.subject}</p>
             <h3>Message</h3>
                 <p>Message: ${req.body.message}</p>`
-            console.log('Message made');
 
         const transporter = nodemailer.createTransport({
             host:  'smtp.ethereal.email',
