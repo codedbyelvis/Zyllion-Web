@@ -1,0 +1,32 @@
+.col-md-6 {
+    margin-left: 20vw;
+    margin-top: 10vh;
+    /* width: 80vw; */
+/* display:grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr; */
+
+}
+
+.container-fluid {
+    display:grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.form-group {
+/* background-color: red; */
+}
+
+input[type=text] {
+    /* background-color: aqua; */
+    width: 1fr;
+}
+textarea {
+    /* background-color: blueviolet; */
+    width: 2fr;
+}
+
+/* form {
+    width: 80vw;
+} */

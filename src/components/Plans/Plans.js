@@ -32,7 +32,7 @@ export default class Plans extends Component {
                 <h3>Basic</h3>
                 <h4>First Month Free</h4>
                 <p>then</p>
-                <p><strong>$59</strong> per user/month</p>
+                <p><strong>$59.99</strong> per user/month</p>
                 <p>Basic starter plan for small businesses and contractors</p>
                 <h4>Features:</h4>
                     {/* <p>Choose either:</p> */}
@@ -52,7 +52,7 @@ export default class Plans extends Component {
                 <h3>Corporate</h3>
                 <h4>First Month Free</h4>
                 <p>then</p>
-                <p><strong>$99</strong> Per Month/User</p>
+                <p><strong>$99.99</strong> Per Month/User</p>
                 <p>The perfect plan for an established mid-sized company</p>
                 <h4>Features:</h4>
                     <p>Automated Accounts Payable</p>

@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import FormContainer from "./Signup-FC";
-import './Signup.css';
+import FormContainer from "../../Forms/FormContainer";
+import './Test.css';
 
 const styles = {
   fontFamily: "sans-serif",
   textAlign: "center"
 };
 
-export default class Signup extends Component {
+export default class Test extends Component {
   render() {
     return (
-      <div className="Signup">
+      <div className="col-md-6">
         <h3> Sample Form Container </h3>
         <FormContainer />
       </div>
@@ -19,4 +19,4 @@ export default class Signup extends Component {
   }
 }
 
-render(<Signup />, document.getElementById("root"));
+render(<Test />, document.getElementById("root"));

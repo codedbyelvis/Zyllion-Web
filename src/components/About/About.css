@@ -6,16 +6,12 @@
     text-align: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: .5fr 1fr 1fr;
-    grid-row-gap: 25px;
+    /* grid-row-gap: 10px; */
     grid-column-gap: 25px;
     background-color: rgb(125,175,182);
-}
-
-.About img {
-    justify-self: center;
-    position: relative;
-    /* margin-top: 10%; */
-    height: 225px;
+    font-size: 20px;
+    margin-bottom: 5vh;
+    font-family: "futura-pt";
 }
 
 .aboutTitle {
@@ -23,5 +19,12 @@
     grid-column-end: 4;
     justify-self: center;
     position: center;
-    margin-top: 10vh;
+    margin-top: 12vh;
+    margin-bottom: 10vh;
+}
+
+.About img {
+    justify-self: center;
+    position: relative;
+    height: 225px;
 }

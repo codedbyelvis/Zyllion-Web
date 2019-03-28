@@ -26,20 +26,21 @@
 }
  .nav_links{
   position: absolute;
+  width: 75vw;
   /* top: 15px; */
   /* right: 25%; */
-  justify-self: center;
+  justify-self: right;
  }
 
 .customNav ul li {
-  margin: 10%;
+  /* margin: 10%; */
   margin-top: 0%;
   list-style-type: none;
-  justify-content: center;
  }
 
 .customNav a{
   color: rgb(89, 135, 255);
+  /* color:#378ee5; */
   /* font-size: 16px; */
   font-size: 20px;
   font-weight: 600;
@@ -52,14 +53,13 @@
 
 .nav_links ul {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .customNav Button {
-	-moz-box-shadow: 0px 2.5px 0px 1px #dbd0db;
+	/* -moz-box-shadow: 0px 2.5px 0px 1px #dbd0db;
 	-webkit-box-shadow: 0px 2.5px 0px 1px #dbd0db;
-	box-shadow: 0px 2.5px 0px 1px #dbd0db;
+	box-shadow: 0px 2.5px 0px 1px #dbd0db; */
 	background-color:#378ee5;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
@@ -73,10 +73,6 @@
 	padding:4px 15px;
 	text-decoration:none;
   text-shadow:0px 1px 0px #528ecc;
-  justify-content: right;
-  justify-self: right;
-  justify-items: right;
-  /* margin-left: 10%; */
 }
 .customNav Button:hover {
 	background-color:#167de3;
@@ -86,23 +82,11 @@
 	top:1px;
 }
 
-/* .buttons {
-  margin-left: 20%;
-  right: 14%;
-  justify-content: center;
-  justify-self: right;
-  justify-items: right;
-} */
 .Signup {
-  /* padding-left: 20%;
-  right: 14%;
-  justify-content: center;
-  justify-self: right;
-  justify-items: right; */
-  /* margin-left: 40%; */
+  
 }
 .Login {
-  /* margin-left: 10%; */
+  margin-left: 1vw;
   /* right: 14%;
   justify-content: right;
   justify-self: right;
