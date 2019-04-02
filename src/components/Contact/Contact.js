@@ -161,6 +161,13 @@ export default class Contact extends Component {
       <h3 className='Contactinfo'>Questions about blockchain or when we plan to launch? No problem. 
           Drop us a line and we will get back to you.</h3>
         <FormContainer />
+
+        <h3 className='Office'>Our Office</h3>
+        <p className='Directions'>
+          41 Peabody Street
+          Nashville, TN, 37210
+          United States
+        </p>
       </div>
     );
   }

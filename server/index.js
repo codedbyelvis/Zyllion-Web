@@ -8,6 +8,12 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
+
 ////              nodemailer                   ////
 
 app.post('/api/form', (req,res) => {
@@ -190,6 +196,25 @@ app.post('/api/customer/subscribe', function (req, res, next) {
     );
 
 }); //end subscription
+
+app.post('api.zyllion.co/user/login', function (req, res, next) {
+    const email = req.body.email;
+    const password = req.body.password;
+    
+
+    if (!email) {
+        console.log('You cannot log in');
+        return res.send({
+            success: true,
+            email: email,
+            password: password,
+            Message: 'Should have sent'
+        });
+    } else {
+        console.log('credentials recieved');
+        console.log(error);
+    }
+    });
 
 const PORT = process.env.PORT || 3005;
 

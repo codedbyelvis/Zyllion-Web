@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import zyllion_logo from "./components/Home/Logo.png";
 import Home from "./components/Home/Home";
 import Plans from "./components/Plans/Plans";
-import Compare from "./components/Compare/Compare";
-import Signup from "./components/Signup/Signup";
-import Signin from "./components/Signin/Signin";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
+// import Compare from "./components/Compare/Compare";
+import Signup from "./components/Signup/Signup";
+import Signin from "./components/Signin/Signin";
 import AccountDetails from "./components/Stripe/AccountDetails";
 import Step2 from "./components/Stripe/Step2";
 import Test from "./components/Control Panel/Account/Test";
-import zyllion_logo from "./components/Home/Logo.png";
 import './App.css';
 
 class App extends Component {
@@ -41,7 +41,7 @@ class App extends Component {
               <li className="about"><Link to="/about">About</Link></li>
               <li className="contact"><Link to='/contact'>Contact</Link></li>
               <li className="buttons">
-              <Link to="/signup"><button className='Signup'>Signup</button></Link>
+              <Link to="/plans"><button className='Signup'>Signup</button></Link>
               <Link to="/signin"><button className='Login'>Login</button></Link>
               </li>
               </ul>
@@ -65,11 +65,11 @@ class App extends Component {
             <Switch>
               <Route component={Home} exact path="/" />
               <Route component={Plans} path="/plans" />
-              <Route component={Compare} path="/compare" />
-              <Route component={Signup} path="/signup" />
-              <Route component={Signin} path="/signin" />
               <Route component={About} path="/about" />
               <Route component={Contact} path="/contact" />
+              {/* <Route component={Compare} path="/compare" /> */}
+              <Route component={Signup} path="/signup" />
+              <Route component={Signin} path="/signin" />
               <Route component={AccountDetails} path="/stripe" />
               <Route component={Step2} path="/step2" />
               <Route component={Test} path="/Test" />

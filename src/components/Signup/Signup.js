@@ -12,7 +12,7 @@ export default class Signup extends Component {
   render() {
     return (
       <div className="Signup">
-        <h3> Sample Form Container </h3>
+        <h3>Thank you for joining Zyllion with the *This will say the name of the plan they choose* plan</h3>
         <FormContainer />
       </div>
     );

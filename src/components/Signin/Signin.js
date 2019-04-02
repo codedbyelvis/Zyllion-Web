@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FormContainer from "./Signin-FC";
 
 import './Signin.css';
 export default class Signin extends Component {
@@ -17,6 +18,17 @@ export default class Signin extends Component {
       componentDidMount() {
         window.scrollTo(0, 0);
     }
+
+    //    componentDidMount(){
+    //     axios.post('http://127.0.0.1:8000/api/plan/list')
+    //     .then(res=>{
+    //         // this.setState({
+    //         //     herolist: res.data
+    //         // });
+    //         console.log('Today is Saturday!');
+    //         console.log(res.data);
+    //     })
+    // }
     
       handleChange (evt) {
         this.setState({ [evt.target.name]: evt.target.value },
@@ -27,8 +39,10 @@ export default class Signin extends Component {
         return (
             <div className='Signin'>
                 <h1 className='SigninTitle'>Sign-up</h1>
-                <h3>Thank you for joining Zyllion with the *This will say the name of the plan they choose* plan</h3>
-                <form>
+                <h3>Welcome Back</h3>
+                <FormContainer />
+                
+                {/* <form>
         <label>Account manager</label>
         <input type="text" name="accountManager" onChange={this.handleChange} />
         <label>Account Email</label>
@@ -39,7 +53,7 @@ export default class Signin extends Component {
         <input type="text" name="subject" onChange={this.handleChange} />
         <label>message</label>
         <input type="text" name="message" onChange={this.handleChange} />
-                </form>
+                </form> */}
             </div> 
         )
     }

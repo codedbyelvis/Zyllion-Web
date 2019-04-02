@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 
-/* Import Components */
 import Input from "../Forms/Input";
 import Select from "../Forms/Select";
 import Button from "../Forms/Button";
 
-class ContactFC extends Component {
+class AccountFC extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      SignupState: {
+      AccountInfo: {
         company_name: "",
         first_name: "",
         last_name: "",
@@ -72,12 +71,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           company_name: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
   
@@ -85,12 +84,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           first_name: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -98,12 +97,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           last_name: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -111,12 +110,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           email: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -124,12 +123,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           paasword: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -137,12 +136,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           ext: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -150,12 +149,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           phone: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -163,12 +162,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           address1: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -176,12 +175,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           address2: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -189,12 +188,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           city: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -219,12 +218,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           zip: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -232,12 +231,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           country: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -245,12 +244,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           num_users: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -258,12 +257,12 @@ class ContactFC extends Component {
     let value = e.target.value;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           creditcard: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
@@ -276,18 +275,18 @@ class ContactFC extends Component {
     let name = e.target.name;
     this.setState(
       prevState => ({
-        SignupState: {
-          ...prevState.SignupState,
+        AccountInfo: {
+          ...prevState.AccountInfo,
           [name]: value
         }
       }),
-      () => console.log(this.state.SignupState)
+      () => console.log(this.state.AccountInfo)
     );
   }
 
   handleFormSubmit(e) {
     e.preventDefault();
-    let userData = this.state.SignupState;
+    let userData = this.state.AccountInfo;
 
     fetch("http://example.com", {
       method: "POST",
@@ -306,7 +305,7 @@ class ContactFC extends Component {
 //   handleClearForm(e) {
 //     e.preventDefault();
 //     this.setState({
-//       SignupState: {
+//       AccountInfo: {
 //         name: "",
 //         email: "",
 //         subject: "",
@@ -322,7 +321,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Company Name"}
           name={"company_name"}
-          value={this.state.SignupState.company_name}
+          value={this.state.AccountInfo.company_name}
           placeholder={"Enter your Company"}
           handleChange={this.handleInput}
         />{" "}
@@ -331,7 +330,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"First Name"}
           name={"first_name"}
-          value={this.state.SignupState.first_name}
+          value={this.state.AccountInfo.first_name}
           placeholder={"Enter your First Name"}
           handleChange={this.handleInput}
         />{" "}
@@ -340,7 +339,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Last Name"}
           name={"last_name"}
-          value={this.state.SignupState.last_name}
+          value={this.state.AccountInfo.last_name}
           placeholder={"Enter your Last Name"}
           handleChange={this.handleInput}
         />{" "}
@@ -349,7 +348,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Email"}
           name={"email"}
-          value={this.state.SignupState.email}
+          value={this.state.AccountInfo.email}
           placeholder={"Enter your email"}
           handleChange={this.handleInput}
         />{" "}
@@ -358,7 +357,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Password"}
           name={"password"}
-          value={this.state.SignupState.password}
+          value={this.state.AccountInfo.password}
           placeholder={"Enter your Password"}
           handleChange={this.handleInput}
         />{" "}
@@ -367,7 +366,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Phone Number Extension"}
           name={"ext"}
-          value={this.state.SignupState.ext}
+          value={this.state.AccountInfo.ext}
           placeholder={"Extension"}
           handleChange={this.handleInput}
         />{" "}
@@ -376,7 +375,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Phone Number"}
           name={"phone"}
-          value={this.state.SignupState.phone}
+          value={this.state.AccountInfo.phone}
           placeholder={"Enter your Phone Number"}
           handleChange={this.handleInput}
         />{" "}
@@ -385,7 +384,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Address 1"}
           name={"address1"}
-          value={this.state.SignupState.address1}
+          value={this.state.AccountInfo.address1}
           placeholder={"Enter your Address"}
           handleChange={this.handleInput}
         />{" "}
@@ -394,7 +393,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Address 2"}
           name={"address2"}
-          value={this.state.SignupState.address2}
+          value={this.state.AccountInfo.address2}
           placeholder={"Address 2"}
           handleChange={this.handleInput}
         />{" "}
@@ -403,7 +402,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"City"}
           name={"city"}
-          value={this.state.SignupState.city}
+          value={this.state.AccountInfo.city}
           placeholder={"Enter your City"}
           handleChange={this.handleInput}
         />{" "}
@@ -412,7 +411,7 @@ class ContactFC extends Component {
           title={"State"}
           name={"state"}
           options={this.state.StateInitials}
-          value={this.state.SignupState.state}
+          value={this.state.AccountInfo.state}
           placeholder={"State"}
           handleChange={this.handleInput}
         />{" "}
@@ -421,7 +420,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Zipcode"}
           name={"zip"}
-          value={this.state.SignupState.zip}
+          value={this.state.AccountInfo.zip}
           placeholder={"Zipcode"}
           handleChange={this.handleInput}
         />{" "}
@@ -430,7 +429,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Country"}
           name={"country"}
-          value={this.state.SignupState.country}
+          value={this.state.AccountInfo.country}
           placeholder={"Enter your Country"}
           handleChange={this.handleInput}
         />{" "}
@@ -439,7 +438,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Number of Users"}
           name={"num_users"}
-          value={this.state.SignupState.num_users}
+          value={this.state.AccountInfo.num_users}
           placeholder={"How Many Users?"}
           handleChange={this.handleInput}
         />{" "}
@@ -448,7 +447,7 @@ class ContactFC extends Component {
           inputType={"text"}
           title={"Credit Card"}
           name={"creditcard"}
-          value={this.state.SignupState.creditcard}
+          value={this.state.AccountInfo.creditcard}
           placeholder={"Credit Card Information"}
           handleChange={this.handleInput}
         />{" "}
@@ -477,4 +476,4 @@ const buttonStyle = {
   margin: "10px 10px 10px 10px"
 };
 
-export default ContactFC;
+export default AccountFC;
