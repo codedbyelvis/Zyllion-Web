@@ -4,6 +4,8 @@ const express = require('express'),
     stripe = require("stripe")("sk_test_tNfMw1CPMohLAcwCGlF2Tfic");
 
 const app = express();
+const InRedirect= "http://localhost:3000/account";
+const OutRedirect= "http://localhost:3000/";
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -197,7 +199,7 @@ app.post('/api/customer/subscribe', function (req, res, next) {
 
 }); //end subscription
 
-app.post('api.zyllion.co/user/login', function (req, res, next) {
+app.post('http://127.0.0.1:8000/user/login', function (req, res, next) {
     const email = req.body.email;
     const password = req.body.password;
     
@@ -215,6 +217,11 @@ app.post('api.zyllion.co/user/login', function (req, res, next) {
         console.log(error);
     }
     });
+
+    app.get('http://127.0.0.1:8000/user/logout', (req,res) => {
+        req.logOut();
+        res.redirect(Redirect);
+    })
 
 const PORT = process.env.PORT || 3005;
 

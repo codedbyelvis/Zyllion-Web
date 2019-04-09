@@ -6,11 +6,20 @@ import Plans from "./components/Plans/Plans";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 // import Compare from "./components/Compare/Compare";
+
 import Signup from "./components/Signup/Signup";
 import Signin from "./components/Signin/Signin";
+
+//Stripe
 import AccountDetails from "./components/Stripe/AccountDetails";
 import Step2 from "./components/Stripe/Step2";
+
+//Control Panel
 import Test from "./components/Control Panel/Account/Test";
+import Account from "./components/Control Panel/Account/Account";
+import Payment from "./components/Control Panel/Payment/Payment";
+import Planinfo from "./components/Control Panel/PlanInfo/PlanInfo";
+
 import './App.css';
 
 class App extends Component {
@@ -68,11 +77,17 @@ class App extends Component {
               <Route component={About} path="/about" />
               <Route component={Contact} path="/contact" />
               {/* <Route component={Compare} path="/compare" /> */}
+
               <Route component={Signup} path="/signup" />
               <Route component={Signin} path="/signin" />
+
               <Route component={AccountDetails} path="/stripe" />
               <Route component={Step2} path="/step2" />
+              
               <Route component={Test} path="/Test" />
+              <Route component={Account} path="/account" />
+              <Route component={Payment} path="/payment" />
+              <Route component={Planinfo} path="/planinfo" />
             </Switch>
           </div>
         </BrowserRouter>

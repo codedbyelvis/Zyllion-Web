@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 /* Import Components */
 import Input from "../Forms/Input";
@@ -202,16 +203,16 @@ class ContactFC extends Component {
     const newSelection = e.target.value;
     let newSelectionArray;
 
-    if (this.state.newUser.skills.indexOf(newSelection) > -1) {
-      newSelectionArray = this.state.newUser.skills.filter(
+    if (this.state.SignupState.state.indexOf(newSelection) > -1) {
+      newSelectionArray = this.state.SignupState.state.filter(
         s => s !== newSelection
       );
     } else {
-      newSelectionArray = [...this.state.newUser.skills, newSelection];
+      newSelectionArray = [...this.state.SignupState.state, newSelection];
     }
 
     this.setState(prevState => ({
-      newUser: { ...prevState.newUser, skills: newSelectionArray }
+      SignupState: { ...prevState.SignupState, state: newSelectionArray }
     }));
   }
 
@@ -285,22 +286,80 @@ class ContactFC extends Component {
     );
   }
 
-  handleFormSubmit(e) {
-    e.preventDefault();
-    let userData = this.state.SignupState;
 
-    fetch("http://example.com", {
-      method: "POST",
-      body: JSON.stringify(userData),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    }).then(response => {
-      response.json().then(data => {
-        console.log("Successful" + data);
-      });
-    });
+    handleFormSubmit(e) {
+      e.preventDefault();
+      let userData = this.state.SignupState;
+  
+      const { company_name,
+        first_name,
+        last_name,
+        payment_method,
+        plan,
+        num_users,
+        phone,
+        ext,
+        address1,
+        address2,
+        city,
+        state,
+        zip,
+        country,
+        creditcard,
+        email,
+        password,
+        payment_id, } =this.state.SignupState;
+
+        axios({
+          method: 'get',
+          url: `http://127.0.0.1:8000/user/emailcheck/${email}`,
+          
+          
+        }).then((res)=> {
+          if(res.data.exists === true) {
+            alert('Sorry this email is taken');
+            console.log('Sorry this is taken!'); 
+          } else {
+            console.log("greenlight")
+          }
+           console.log(res.data.exists); 
+        }).catch((error)=> {
+            console.log(error);
+            console.log("Story doesn't check out");
+        });
+  
+      axios({
+          method: 'post',
+          url: 'http://127.0.0.1:8000/account/create',
+          data: {
+            company_name,
+            first_name,
+            last_name,
+            payment_method: 1,
+            plan: 7,
+            num_users,
+            phone,
+            ext,
+            address1,
+            address2,
+            city,
+            state,
+            zip,
+            country,
+            creditcard,
+            email,
+            password,
+            payment_id
+          }
+          
+        }).then((res)=> {
+           console.log('Crossed the bridge safely!'); 
+           console.log(res.data); 
+        }).catch((error)=> {
+            console.log(error);
+            console.log("We cracked a few eggs");
+        });
+  
   }
 
 //   handleClearForm(e) {

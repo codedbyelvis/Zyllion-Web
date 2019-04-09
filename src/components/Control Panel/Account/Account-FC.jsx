@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
-import Input from "../Forms/Input";
-import Select from "../Forms/Select";
-import Button from "../Forms/Button";
+import Input from "../../Forms/Input";
+import Select from "../../Forms/Select";
+import Button from "../../Forms/Button";
 
 class AccountFC extends Component {
   constructor(props) {
@@ -65,7 +66,46 @@ class AccountFC extends Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
-  /* This lifecycle hook gets executed when the component mounts */
+  /* These lifecycle hook gets executed when the component mounts */
+
+  componentDidMount(e) {
+    let userData = this.state.AccountInfo;
+
+    const { company_name,
+      first_name,
+      last_name,
+      payment_method,
+      plan,
+      num_users,
+      phone,
+      ext,
+      address1,
+      address2,
+      city,
+      state,
+      zip,
+      country,
+      creditcard,
+      email,
+      password,
+      payment_id, } =this.state.AccountInfo;
+
+    axios({
+      method: 'get',
+      url: 'http://127.0.0.1:8000/account/detaildata',
+      
+      
+    }).then((res)=> {
+      res.data = this.state.AccountInfo;
+        console.log(res.data); 
+        console.log("Up to date")
+      
+    }).catch((error)=> {
+        console.log(error);
+        console.log("Could not get past records");
+    });
+
+}
 
   handleCompanyName(e) {
     let value = e.target.value;
@@ -288,19 +328,58 @@ class AccountFC extends Component {
     e.preventDefault();
     let userData = this.state.AccountInfo;
 
-    fetch("http://example.com", {
-      method: "POST",
-      body: JSON.stringify(userData),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    }).then(response => {
-      response.json().then(data => {
-        console.log("Successful" + data);
+    const { company_name,
+      first_name,
+      last_name,
+      payment_method,
+      plan,
+      num_users,
+      phone,
+      ext,
+      address1,
+      address2,
+      city,
+      state,
+      zip,
+      country,
+      creditcard,
+      email,
+      password,
+      payment_id, } =this.state.AccountInfo;
+
+    axios({
+        method: 'post',
+        url: 'http://127.0.0.1:8000/account/update',
+        data: {
+          company_name,
+          first_name,
+          last_name,
+          payment_method: 1,
+          plan: 7,
+          num_users,
+          phone,
+          ext,
+          address1,
+          address2,
+          city,
+          state,
+          zip,
+          country,
+          creditcard,
+          email,
+          password,
+          payment_id
+        }
+        
+      }).then((res)=> {
+         console.log('All up to date'); 
+         console.log(res.data); 
+      }).catch((error)=> {
+          console.log(error);
+          console.log("Things don't always change");
       });
-    });
-  }
+
+}
 
 //   handleClearForm(e) {
 //     e.preventDefault();
@@ -322,7 +401,7 @@ class AccountFC extends Component {
           title={"Company Name"}
           name={"company_name"}
           value={this.state.AccountInfo.company_name}
-          placeholder={"Enter your Company"}
+          placeholder={`${this.state.AccountInfo.company_name}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Name of the company */}
@@ -331,7 +410,7 @@ class AccountFC extends Component {
           title={"First Name"}
           name={"first_name"}
           value={this.state.AccountInfo.first_name}
-          placeholder={"Enter your First Name"}
+          placeholder={`${this.state.AccountInfo.first_name}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Admin First Name */}
@@ -340,7 +419,7 @@ class AccountFC extends Component {
           title={"Last Name"}
           name={"last_name"}
           value={this.state.AccountInfo.last_name}
-          placeholder={"Enter your Last Name"}
+          placeholder={`${this.state.AccountInfo.last_name}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Admin Last Name */}
@@ -349,7 +428,7 @@ class AccountFC extends Component {
           title={"Email"}
           name={"email"}
           value={this.state.AccountInfo.email}
-          placeholder={"Enter your email"}
+          placeholder={`${this.state.AccountInfo.email}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Email */}
@@ -358,13 +437,13 @@ class AccountFC extends Component {
           title={"Password"}
           name={"password"}
           value={this.state.AccountInfo.password}
-          placeholder={"Enter your Password"}
+          placeholder={`${this.state.AccountInfo.password}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Password */}
         <Input
           inputType={"text"}
-          title={"Phone Number Extension"}
+          title={`${this.state.AccountInfo.ext}`}
           name={"ext"}
           value={this.state.AccountInfo.ext}
           placeholder={"Extension"}
@@ -376,7 +455,7 @@ class AccountFC extends Component {
           title={"Phone Number"}
           name={"phone"}
           value={this.state.AccountInfo.phone}
-          placeholder={"Enter your Phone Number"}
+          placeholder={`${this.state.AccountInfo.phone}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Phone Number */}
@@ -385,7 +464,7 @@ class AccountFC extends Component {
           title={"Address 1"}
           name={"address1"}
           value={this.state.AccountInfo.address1}
-          placeholder={"Enter your Address"}
+          placeholder={`${this.state.AccountInfo.address1}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Address 1 */}
@@ -394,7 +473,7 @@ class AccountFC extends Component {
           title={"Address 2"}
           name={"address2"}
           value={this.state.AccountInfo.address2}
-          placeholder={"Address 2"}
+          placeholder={`${this.state.AccountInfo.address2}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Address 2 */}
@@ -403,7 +482,7 @@ class AccountFC extends Component {
           title={"City"}
           name={"city"}
           value={this.state.AccountInfo.city}
-          placeholder={"Enter your City"}
+          placeholder={`${this.state.AccountInfo.city}`}
           handleChange={this.handleInput}
         />{" "}
         {/* City */}
@@ -412,7 +491,7 @@ class AccountFC extends Component {
           name={"state"}
           options={this.state.StateInitials}
           value={this.state.AccountInfo.state}
-          placeholder={"State"}
+          placeholder={`${this.state.AccountInfo.state}`}
           handleChange={this.handleInput}
         />{" "}
         {/* State Selection */}
@@ -421,7 +500,7 @@ class AccountFC extends Component {
           title={"Zipcode"}
           name={"zip"}
           value={this.state.AccountInfo.zip}
-          placeholder={"Zipcode"}
+          placeholder={`${this.state.AccountInfo.zip}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Zipcode */}
@@ -430,7 +509,7 @@ class AccountFC extends Component {
           title={"Country"}
           name={"country"}
           value={this.state.AccountInfo.country}
-          placeholder={"Enter your Country"}
+          placeholder={`${this.state.AccountInfo.country}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Country */}
@@ -439,7 +518,7 @@ class AccountFC extends Component {
           title={"Number of Users"}
           name={"num_users"}
           value={this.state.AccountInfo.num_users}
-          placeholder={"How Many Users?"}
+          placeholder={`${this.state.AccountInfo.num_users}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Number of Users */}
@@ -448,7 +527,7 @@ class AccountFC extends Component {
           title={"Credit Card"}
           name={"creditcard"}
           value={this.state.AccountInfo.creditcard}
-          placeholder={"Credit Card Information"}
+          placeholder={`${this.state.AccountInfo.creditcard}`}
           handleChange={this.handleInput}
         />{" "}
         {/* Credit Card */}
@@ -456,7 +535,7 @@ class AccountFC extends Component {
         <Button
           action={this.handleFormSubmit}
           type={"primary"}
-          title={"Submit"}
+          title={"Update"}
           style={buttonStyle}
         />{" "}
         {/*Submit */}

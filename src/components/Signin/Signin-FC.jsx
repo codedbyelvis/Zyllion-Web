@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { Link, Redirect, withRouter  } from 'react-router-dom';
+import { connect } from 'react-redux';
+import {getUser, refresh} from '../../ducks/reducer';
 import axios from 'axios';
 
 import Input from "../Forms/Input";
@@ -9,6 +12,8 @@ class SignInFC extends Component {
     super(props);
 
     this.state = {
+      // redirect: false,
+      token: "",
       SignIn: {
         email: "",
         password: "",
@@ -24,35 +29,20 @@ class SignInFC extends Component {
 
   /* This lifecycle hook gets executed when the component mounts */
 
+  // setRedirect = () => {
+  //   this.setState({
+  //     redirect: true
+  //   })
+  // }
+  // renderRedirect = () => {
+  //   if (this.state.token != null) {
+  //     return <Redirect to='/account' />
+  //   }
+  // }
+
   componentDidMount() {
     window.scrollTo(0, 0); 
     }
-
-  handleFirstName(e) {
-    let value = e.target.value;
-    this.setState(
-      prevState => ({
-        SignIn: {
-          ...prevState.SignIn,
-          firstName: value
-        }
-      }),
-      () => console.log(this.state.SignIn)
-    );
-  }
-
-  handleLastName(e) {
-    let value = e.target.value;
-    this.setState(
-      prevState => ({
-        SignIn: {
-          ...prevState.SignIn,
-          lastName: value
-        }
-      }),
-      () => console.log(this.state.SignIn)
-    );
-  }
 
   handleEmail(e) {
     let value = e.target.value;
@@ -94,45 +84,30 @@ class SignInFC extends Component {
     );
   }
 
-  handleTextArea(e) {
-    console.log("Inside handleTextArea");
-    let value = e.target.value;
-    this.setState(
-      prevState => ({
-        SignIn: {
-          ...prevState.SignIn,
-          message: value
-        }
-      }),
-      () => console.log(this.state.SignIn)
-    );
-  }
-
   handleFormSubmit(e) {
     e.preventDefault();
     let userData = this.state.SignIn;
-
-    /////////////    Broken    //////////////////
-    // axios.post('http://127.0.0.1:8000/user/login', {
-    //     email,
-    //     password,
-    //     })
-    //     .then((response) => {
-    //       console.log('Signing In');
-    //       console.log(`${email} Signed In`);
-    //       console.log(password);
-    //       console.log(response.body.token);
-    //       return response;
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //       console.log('Monday, Am I right?');
-    //       console.log(email);
-    //       console.log(password);
-    //   });
-    /////////////    Broken    //////////////////
     
     const { email, password } =this.state.SignIn;
+    // const { redirect } =this.state.redirect;
+
+    axios({
+      method: 'get',
+      url: `http://127.0.0.1:8000/user/emailcheck/${email}`,
+      
+      
+    }).then((res)=> {
+      if(res.data.exists === true) {
+        console.log('This is you'); 
+        console.log('try1', this.state.SignIn.email);
+      } else {
+        console.log("YOu SHall NOt PAss")
+      }
+       console.log(res.data.exists); 
+    }).catch((error)=> {
+        console.log(error);
+        console.log("Story doesn't check out");
+    });
 
     axios({
         method: 'post',
@@ -145,21 +120,29 @@ class SignInFC extends Component {
         }
         
       }).then((res)=> {
+        // this.state.redirect = true;
+        this.state.token = res.data.token;
+        console.log('Read like a book',this.props.history)
+        console.log('turn the pages',this.props)
+        this.props.history.push("/account")
          console.log('At least they could do it!'); 
          console.log(res.data.token); 
+        //  console.log(this.state.redirect); 
+        //  return <Redirect to='/account' />
       }).catch((error)=> {
           console.log(error);
           console.log("and then there were 2");
       });
 
-      //make submit got to CP Account && feed token to redux
+      //make submit go to CP Account && feed token to redux
 }
 
 
   render() {
     return (
-      <form className="container-fluid" onSubmit={this.handleFormSubmit}>
-
+      
+      <form className="container-fluid" onSubmit={this.handleFormSubmit} handleChange={this.renderRedirect}>
+      
         <Input
           inputType={"text"}
           title={"Email"}
@@ -185,6 +168,7 @@ class SignInFC extends Component {
           title={"Submit"}
           style={buttonStyle}
           onSubmit={this.handleSubmit}
+          // handleChange={this.renderRedirect}
         />{" "}
         {/*Submit */}
       </form>
@@ -196,4 +180,11 @@ const buttonStyle = {
   margin: "10px 10px 10px 10px"
 };
 
-export default SignInFC;
+
+// export default connect(SignInFC);
+function mapStateToProps( state,props ) {
+  console.log('props',props);
+  return state;
+}
+
+export default connect( mapStateToProps, {getUser, refresh} )( withRouter(SignInFC) );

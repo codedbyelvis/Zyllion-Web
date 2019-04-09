@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import FormContainer from "./Account-FC";
-import './Account.css';
+import FormContainer from "./PlanInfo-FC";
+import './PlanInfo.css';
 
 const styles = {
   fontFamily: "sans-serif",
   textAlign: "center"
 };
 
-export default class Account extends Component {
+export default class Plan extends Component {
 
     componentDidMount() {
         window.scrollTo(0, 0);
@@ -16,12 +16,12 @@ export default class Account extends Component {
 
   render() {
     return (
-      <div className="Account">
-        <h3>Account Details</h3>
+      <div className="Plan">
+        <h3>Plan Details</h3>
         <FormContainer />
       </div>
     );
   }
 }
 
-render(<Account />, document.getElementById("root"));
+render(<Plan />, document.getElementById("root"));
