@@ -39,11 +39,11 @@ export default class Signin extends Component {
     render() {
         return (
             <div className='Signin'>
-                <h1 className='SigninTitle'>Sign-up</h1>
-                <h3>Login</h3>
-                <FormContainer />
-                <button><a href='http://localhost:3001/'>Login</a></button>
+                <div className="SigninAll"><div className="SigninTitle"><h3>Login</h3></div>
+                <div className="SigninFormz"><FormContainer /></div>
+                <div className="SigninButton"><button><a href='http://localhost:3001/' blank="go to onboard">Login</a></button></div>
                 
+                </div>
                 {/* <form>
         <label>Account manager</label>
         <input type="text" name="accountManager" onChange={this.handleChange} />

@@ -27,7 +27,8 @@ class Contact extends Component {
       <h1 className='ContactTitle'>Contact</h1>
       <h3 className='ContactInfo'>Questions about blockchain or when we plan to launch? No problem. 
           Drop us a line and we will get back to you.</h3>
-        <div className="transform"><FormContainer /></div>
+          <div className="Formz"><FormContainer /></div>
+        {/* <div className="transform"><FormContainer /></div> */}
 
       <div className="Our">
         <h3 className='Office'>Our Office</h3>

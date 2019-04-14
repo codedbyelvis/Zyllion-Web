@@ -148,25 +148,25 @@ class SignInFC extends Component {
   render() {
     return (
       
-      <form className="container-fluid" onSubmit={this.handleFormSubmit} handleChange={this.renderRedirect}>
+      <form className="Signcontainer-fluid" onSubmit={this.handleFormSubmit} handleChange={this.renderRedirect}>
       
-        <Input
+        <div className="signine"><Input
           inputType={"email"}
           title={"Email"}
           name={"email"}
           value={this.state.SignIn.email}
           placeholder={"Enter your email"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Email */}
-        <Input
+        <div className="signinp"><Input
           inputType={"password"}
           title={"Password"}
           name={"password"}
           value={this.state.SignIn.password}
           placeholder={"Enter your password"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Password */}
         {/* <Button
           action={this.handleFormSubmit}

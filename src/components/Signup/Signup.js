@@ -14,7 +14,7 @@ export default class Signup extends Component {
     return (
       <div className="Signup">
         <h3 SignupTitle>Thank you for joining Zyllion with the *This will say the name of the plan they choose* plan</h3>
-        <FormContainer />
+        <div className="Formz"><FormContainer /></div>
         <Link to="/signin"><button className='log'>Submit</button></Link>
       </div>
     );
