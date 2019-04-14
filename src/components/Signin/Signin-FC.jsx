@@ -41,7 +41,9 @@ class SignInFC extends Component {
   // }
 
   componentDidMount() {
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
+    console.log('Read like a book',this.props.history);
+    console.log('turn the pages',this.props); 
     }
 
   handleEmail(e) {
@@ -108,7 +110,7 @@ class SignInFC extends Component {
         console.log(error);
         console.log("Story doesn't check out");
     });
-
+    
     axios({
         method: 'post',
         url: 'http://127.0.0.1:8000/user/login',
@@ -124,17 +126,22 @@ class SignInFC extends Component {
         this.state.token = res.data.token;
         console.log('Read like a book',this.props.history)
         console.log('turn the pages',this.props)
-        this.props.history.push("/account")
+        // this.props.history.push("/account")
          console.log('At least they could do it!'); 
          console.log(res.data.token); 
+         console.log('uh oh', this.state)
+
+         
+         
+        //  console.log('are we sending?',{...this.props}) 
         //  console.log(this.state.redirect); 
-        //  return <Redirect to='/account' />
+        //  return {...this.props},<Redirect to='/account' />
+         this.props.history.push("/account");
       }).catch((error)=> {
           console.log(error);
           console.log("and then there were 2");
       });
 
-      //make submit go to CP Account && feed token to redux
 }
 
 
@@ -144,7 +151,7 @@ class SignInFC extends Component {
       <form className="container-fluid" onSubmit={this.handleFormSubmit} handleChange={this.renderRedirect}>
       
         <Input
-          inputType={"text"}
+          inputType={"email"}
           title={"Email"}
           name={"email"}
           value={this.state.SignIn.email}
@@ -153,7 +160,7 @@ class SignInFC extends Component {
         />{" "}
         {/* Email */}
         <Input
-          inputType={"text"}
+          inputType={"password"}
           title={"Password"}
           name={"password"}
           value={this.state.SignIn.password}
@@ -161,7 +168,7 @@ class SignInFC extends Component {
           handleChange={this.handleInput}
         />{" "}
         {/* Password */}
-        <Button
+        {/* <Button
           action={this.handleFormSubmit}
         //   action={this.handleClearForm}
           type={"primary"}
@@ -169,7 +176,7 @@ class SignInFC extends Component {
           style={buttonStyle}
           onSubmit={this.handleSubmit}
           // handleChange={this.renderRedirect}
-        />{" "}
+        />{" "} */}
         {/*Submit */}
       </form>
     );
@@ -183,8 +190,20 @@ const buttonStyle = {
 
 // export default connect(SignInFC);
 function mapStateToProps( state,props ) {
-  console.log('props',props);
-  return state;
+  console.log('me',state)
+  console.log('props',(props));
+  console.log('state',state);
+  console.log('this',this);
+  // const { email, password } =state.SignIn;
+  // const { token } =this.state.token;
+  // return state;
+  return {
+    // email: this.state.SignIn.email,
+    // password: this.state.SignIn.password,
+    // token: this.state.token,
+    // LoginState: this.state,
+    // poken: this.state.token
+  }
 }
 
 export default connect( mapStateToProps, {getUser, refresh} )( withRouter(SignInFC) );

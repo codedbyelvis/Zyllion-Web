@@ -6,3 +6,12 @@
     text-align: center;
     align-items: center;
 }
+
+.signupTitle {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    position: center;
+    margin-top: 12vh;
+    margin-bottom: 10vh;
+}

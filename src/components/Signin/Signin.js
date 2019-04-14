@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import FormContainer from "./Signin-FC";
 
 import './Signin.css';
@@ -39,8 +40,9 @@ export default class Signin extends Component {
         return (
             <div className='Signin'>
                 <h1 className='SigninTitle'>Sign-up</h1>
-                <h3>Welcome Back</h3>
+                <h3>Login</h3>
                 <FormContainer />
+                <button><a href='http://localhost:3001/'>Login</a></button>
                 
                 {/* <form>
         <label>Account manager</label>

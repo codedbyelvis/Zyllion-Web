@@ -29,6 +29,7 @@ class ContactFC extends Component {
         creditcard: "",
         email: "",
         password: "",
+        cofirm: "",
         payment_id: ""
       },
 
@@ -61,6 +62,7 @@ class ContactFC extends Component {
     this.handleNumUsers = this.handleNumUsers.bind(this);
     this.handleCreditCard = this.handleCreditCard.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
+    this.handleConfirm = this.handleConfirm.bind(this);
     
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     // this.handleClearForm = this.handleClearForm.bind(this);
@@ -128,6 +130,19 @@ class ContactFC extends Component {
         SignupState: {
           ...prevState.SignupState,
           paasword: value
+        }
+      }),
+      () => console.log(this.state.SignupState)
+    );
+  }
+
+  handleConfirm(e) {
+    let value = e.target.value;
+    this.setState(
+      prevState => ({
+        SignupState: {
+          ...prevState.SignupState,
+          confirm: value
         }
       }),
       () => console.log(this.state.SignupState)
@@ -414,11 +429,20 @@ class ContactFC extends Component {
         />{" "}
         {/* Email */}
         <Input
-          inputType={"text"}
+          inputType={"password"}
           title={"Password"}
           name={"password"}
           value={this.state.SignupState.password}
           placeholder={"Enter your Password"}
+          handleChange={this.handleInput}
+        />{" "}
+        {/* Password */}
+        <Input
+          inputType={"password"}
+          title={"Confirm Password"}
+          name={"confirm"}
+          value={this.state.SignupState.confirm}
+          placeholder={"Confirm your Password"}
           handleChange={this.handleInput}
         />{" "}
         {/* Password */}
@@ -513,12 +537,12 @@ class ContactFC extends Component {
         />{" "}
         {/* Credit Card */}
         
-        <Button
+        {/* <Button
           action={this.handleFormSubmit}
           type={"primary"}
           title={"Submit"}
           style={buttonStyle}
-        />{" "}
+        />{" "} */}
         {/*Submit */}
         {/* <Button
           action={this.handleClearForm}

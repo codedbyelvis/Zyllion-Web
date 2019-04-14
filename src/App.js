@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+// import { BrowserHistory } from 'react-router';
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import actionCreators from './ducks/actionCreators';
+
 import zyllion_logo from "./components/Home/Logo.png";
 import Home from "./components/Home/Home";
 import Plans from "./components/Plans/Plans";
@@ -26,13 +31,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapse: true
     };
   }
 
-  test() {
-    console.log('success')
-  }
 
   render() {
     return (
@@ -65,6 +66,7 @@ class App extends Component {
                 <li><a href="">Terms of Use</a></li>
               </ul>
               
+              {/* {React.cloneElement(this.props.children, this.props)} */}
               
             </div>
 
@@ -88,6 +90,9 @@ class App extends Component {
               <Route component={Account} path="/account" />
               <Route component={Payment} path="/payment" />
               <Route component={Planinfo} path="/planinfo" />
+
+
+              {/* <Route component={Example} path="/example/:postId" /> */}
             </Switch>
           </div>
         </BrowserRouter>
@@ -95,5 +100,19 @@ class App extends Component {
     );
   }
 }
+
+// function mapStateToProps(state) {
+//   return{
+//     email: state.Signin.email,
+//     password: state.Signin.password,
+//     token: state.token,
+//   }
+// }
+
+// function MapDispatchToProps(dispatch) {
+//   return bindActionCreators(actionCreators, dispatch);
+// }
+
+// export default connect(mapStateToProps, MapDispatchToProps)(App);
 
 export default App;

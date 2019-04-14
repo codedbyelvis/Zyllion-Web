@@ -81,7 +81,7 @@ export default class Plans extends Component {
                     <p>Quickbooks Online</p>
                 <h4>Users:</h4>
                 <p>1 - 5</p>
-                <Link to="/signup"><button>Signup</button></Link>
+                <Link to="/signup"><button>Coming Soon</button></Link>
                 </div>
         <div className='planCover2'></div>
 

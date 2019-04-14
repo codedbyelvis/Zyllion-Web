@@ -25,17 +25,21 @@ class Contact extends Component {
             {this.props.getUser}
       {this.props.refresh}
       <h1 className='ContactTitle'>Contact</h1>
-      <h3 className='Contactinfo'>Questions about blockchain or when we plan to launch? No problem. 
+      <h3 className='ContactInfo'>Questions about blockchain or when we plan to launch? No problem. 
           Drop us a line and we will get back to you.</h3>
-        <FormContainer />
+        <div className="transform"><FormContainer /></div>
 
+      <div className="Our">
         <h3 className='Office'>Our Office</h3>
         <p className='Directions'>
-          41 Peabody Street
+          <a href="https://www.google.com/maps/dir/36.2340352,-86.3019008/41+Peabody+St,+Nashville,+TN+37210/@36.2123519,-86.8154885,10z/
+          data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x88646643b04dfbdb:0x17986b54dd9208f!2m2!1d-86.7685426!2d36.1577981"
+          blank="Adress">41 Peabody Street
           Nashville, TN, 37210
           United States
-        </p>
+        </a></p>
       </div>
+    </div>
     );
   }
 }
