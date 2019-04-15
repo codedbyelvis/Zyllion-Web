@@ -13,9 +13,11 @@ export default class Signup extends Component {
   render() {
     return (
       <div className="Signup">
-        <h3 SignupTitle>Thank you for joining Zyllion with the *This will say the name of the plan they choose* plan</h3>
-        <div className="Formz"><FormContainer /></div>
-        <Link to="/signin"><button className='log'>Submit</button></Link>
+        <div className="signupAll"><h3 className="SignupTitle">Thank you for joining Zyllion</h3>
+        <p className="SignupThank">Thank you for joining Zyllion</p>
+        <div className="UpFormz"><FormContainer /></div>
+        <Link to="/signin"><button className='SignupButton'>Submit</button></Link>
+      </div>  
       </div>
     );
   }

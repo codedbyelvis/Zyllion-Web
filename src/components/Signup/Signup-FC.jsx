@@ -391,150 +391,150 @@ class ContactFC extends Component {
 
   render() {
     return (
-      <form className="container-fluid" onSubmit={this.handleFormSubmit}>
-        <Input
+      <form className="Upcontainer-fluid" onSubmit={this.handleFormSubmit}>
+        <div className="Upcn"><Input
           inputType={"text"}
           title={"Company Name"}
           name={"company_name"}
           value={this.state.SignupState.company_name}
           placeholder={"Enter your Company"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Name of the company */}
-        <Input
+        <div className="Upfn"><Input
           inputType={"text"}
           title={"First Name"}
           name={"first_name"}
           value={this.state.SignupState.first_name}
           placeholder={"Enter your First Name"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Admin First Name */}
-        <Input
+        <div className="Upln"><Input
           inputType={"text"}
           title={"Last Name"}
           name={"last_name"}
           value={this.state.SignupState.last_name}
           placeholder={"Enter your Last Name"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Admin Last Name */}
-        <Input
+        <div className="Upem"><Input
           inputType={"text"}
           title={"Email"}
           name={"email"}
           value={this.state.SignupState.email}
           placeholder={"Enter your email"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Email */}
-        <Input
+        <div className="Uppw"><Input
           inputType={"password"}
           title={"Password"}
           name={"password"}
           value={this.state.SignupState.password}
           placeholder={"Enter your Password"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Password */}
-        <Input
+        <div className="Upcp"><Input
           inputType={"password"}
           title={"Confirm Password"}
           name={"confirm"}
           value={this.state.SignupState.confirm}
           placeholder={"Confirm your Password"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Password */}
-        <Input
+        {/* <Input
           inputType={"text"}
           title={"Phone Number Extension"}
           name={"ext"}
           value={this.state.SignupState.ext}
           placeholder={"Extension"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "} */}
         {/* Phone Number Extension */}
-        <Input
+        <div className="Uppn"><Input
           inputType={"text"}
           title={"Phone Number"}
           name={"phone"}
           value={this.state.SignupState.phone}
           placeholder={"Enter your Phone Number"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Phone Number */}
-        <Input
+        <div className="Upa1"><Input
           inputType={"text"}
           title={"Address 1"}
           name={"address1"}
           value={this.state.SignupState.address1}
           placeholder={"Enter your Address"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Address 1 */}
-        <Input
+        <div className="Upa2"><Input
           inputType={"text"}
           title={"Address 2"}
           name={"address2"}
           value={this.state.SignupState.address2}
           placeholder={"Address 2"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Address 2 */}
-        <Input
+        <div className="Upct"><Input
           inputType={"text"}
           title={"City"}
           name={"city"}
           value={this.state.SignupState.city}
           placeholder={"Enter your City"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* City */}
-        <Select
+        <div className="Upst"><Select
           title={"State"}
           name={"state"}
           options={this.state.StateInitials}
           value={this.state.SignupState.state}
           placeholder={"State"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* State Selection */}
-        <Input
+        <div className="Upzp"><Input
           inputType={"text"}
           title={"Zipcode"}
           name={"zip"}
           value={this.state.SignupState.zip}
           placeholder={"Zipcode"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Zipcode */}
-        <Input
+        <div className="Upcy"><Input
           inputType={"text"}
           title={"Country"}
           name={"country"}
           value={this.state.SignupState.country}
           placeholder={"Enter your Country"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Country */}
-        <Input
+        <div className="Upnu"><Input
           inputType={"text"}
           title={"Number of Users"}
           name={"num_users"}
           value={this.state.SignupState.num_users}
           placeholder={"How Many Users?"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Number of Users */}
-        <Input
+        {/* <Input
           inputType={"text"}
           title={"Credit Card"}
           name={"creditcard"}
           value={this.state.SignupState.creditcard}
           placeholder={"Credit Card Information"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "} */}
         {/* Credit Card */}
         
         {/* <Button

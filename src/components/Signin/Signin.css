@@ -50,7 +50,7 @@
 	-webkit-border-radius:28px;
 	border-radius:28px;
 	border:1px solid #3281d1;
-	display:inline-block;
+	/* display:inline-block; */
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;

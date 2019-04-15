@@ -47,12 +47,12 @@ class App extends Component {
             </Link>
             <div className="nav_links" >
               <ul>
-              <li className="plans"><Link to="/plans">Plans</Link></li>
-              <li className="about"><Link to="/about">About</Link></li>
-              <li className="contact"><Link to='/contact'>Contact</Link></li>
+              <li className="Homeplans"><Link to="/plans">Plans</Link></li>
+              <li className="Homeabout"><Link to="/about">About</Link></li>
+              <li className="Homecontact"><Link to='/contact'>Contact</Link></li>
               <li className="buttons">
-              <Link to="/plans"><button className='Signup'>Signup</button></Link>
-              <Link to="/signin"><button className='Login'>Login</button></Link>
+              <Link to="/plans"><button className='HomeSignup'>Signup</button></Link>
+              <Link to="/signin"><button className='HomeLogin'>Login</button></Link>
               </li>
               </ul>
             </div>
