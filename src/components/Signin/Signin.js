@@ -31,6 +31,17 @@ export default class Signin extends Component {
     //     })
     // }
     
+    //    componentDidMount(){
+    //     axios.post('http://127.0.0.1:8000/api/plan/list')
+    //     .then(res=>{
+    //         // this.setState({
+    //         //     herolist: res.data
+    //         // });
+    //         console.log('Today is Saturday!');
+    //         console.log(res.data);
+    //     })
+    // }
+    
       handleChange (evt) {
         this.setState({ [evt.target.name]: evt.target.value },
             () => console.log(this.state));
