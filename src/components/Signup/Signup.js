@@ -14,7 +14,7 @@ export default class Signup extends Component {
     return (
       <div className="Signup">
         <div className="signupAll"><h3 className="SignupTitle">Thank you for joining Zyllion</h3>
-        <p className="SignupThank">Thank you for joining Zyllion</p>
+        {/* <p className="SignupThank">Let's get to know each other</p> */}
         <div className="UpFormz"><FormContainer /></div>
         <Link to="/signin"><button className='SignupButton'>Submit</button></Link>
       </div>  

@@ -1,22 +1,24 @@
 .Signup {
-    height: 275vh;
+    height: 170vh;
     width: 100vw;
     display: grid;
     grid-template-rows: 1fr 1fr 7fr 1fr;
     text-align: center;
     align-items: center;
     justify-items: center;
+    background-color: rgb(102,196,205);
+    font-size: 30px;
+    font-family: "futura-pt";
 }
 
 .signupTitle {
     justify-self: center;
     position: center;
-    /* margin-top: 50vh;
-    margin-bottom: 10vh; */
+    /* margin-top: 50vh; */
 }
 
 .signupAll {
-    margin-top: 50vh;
+    margin-top: 10vh;
     margin-bottom: 0vh;
     /* margin-left: 250px; */
     /* align-self: center;
@@ -48,7 +50,8 @@
 }
 
 #state {
-    max-width: 125px;
+    width: 228px;
+    height: 45px;
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -103,6 +106,7 @@ input[type=radio] {
 
 input, textarea {
 padding: 1em;
+width: 600px;
 }
 
 .Signup button {

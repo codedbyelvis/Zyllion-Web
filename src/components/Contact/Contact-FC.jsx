@@ -206,67 +206,67 @@ class ContactFC extends Component {
 
   render() {
     return (
-      <form className="container-fluid" onSubmit={this.handleFormSubmit}>
-        <Input
+      <form className="Ccontainer-fluid" onSubmit={this.handleFormSubmit}>
+        <div className="Cfn"><Input
           inputType={"text"}
           title={"First Name"}
           name={"firstName"}
           value={this.state.contactEmail.firstName}
-          placeholder={"Enter your First Name"}
+          placeholder={"Enter your first name"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* First Name */}
-        <Input
+        <div className="Cln"><Input
           inputType={"text"}
           title={"Last Name"}
           name={"lastName"}
           value={this.state.contactEmail.lastName}
-          placeholder={"Enter your Last Name"}
+          placeholder={"Enter your last name"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Last Name */}
-        <Input
+        <div className="Ce"><Input
           inputType={"text"}
           title={"Email"}
           name={"email"}
           value={this.state.contactEmail.email}
           placeholder={"Enter your email"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Email */}
-        <Input
+        <div className="Cs"><Input
           inputType={"text"}
           title={"Subject"}
           name={"subject"}
           value={this.state.contactEmail.subject}
           placeholder={"Enter your subject"}
           handleChange={this.handleInput}
-        />{" "}
+        />{" "}</div>
         {/* Subject */}
-        <TextArea
+        <div className="Cm"><TextArea
           title={"Message"}
           rows={10}
           value={this.state.contactEmail.message}
           name={"messageInfo"}
           handleChange={this.handleTextArea}
           placeholder={"We will get back to you as soon as possible"}
-        />
+        /></div>
         {/* Message */}
-        <Button
+        <div className="Csb"><Button
           action={this.handleFormSubmit}
         //   action={this.handleClearForm}
           type={"primary"}
           title={"Submit"}
           style={buttonStyle}
           onSubmit={this.handleSubmit}
-        />{" "}
+        />{" "}</div>
         {/*Submit */}
-        <Button
+        <div className="Ccb"><Button
           action={this.handleClearForm}
           type={"secondary"}
           title={"Clear"}
           style={buttonStyle}
-        />{" "}
+        />{" "}</div>
         {/* Clear the form */}
       </form>
     );
