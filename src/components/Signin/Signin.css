@@ -13,14 +13,14 @@
 
 .SigninTitle {
     position: center;
-    margin-top: 15vh;
+    margin-top: 10vh;
     font-size: 28px;
 }
 
 .Signcontainer-fluid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 100px;
+    grid-column-gap: 20px;
     text-align: left;
     /* padding-top: 20px; */
 }
@@ -41,6 +41,7 @@
 }
 .SigninAll {
     display:grid;
+    grid-template-rows: repeat(3, 1fr);
 }
 
 .Signin button {
