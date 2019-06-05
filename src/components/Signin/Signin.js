@@ -21,7 +21,7 @@ export default class Signin extends Component {
     }
 
     //    componentDidMount(){
-    //     axios.post('http://127.0.0.1:8000/api/plan/list')
+    //     axios.post('')
     //     .then(res=>{
     //         // this.setState({
     //         //     herolist: res.data
@@ -32,7 +32,7 @@ export default class Signin extends Component {
     // }
     
     //    componentDidMount(){
-    //     axios.post('http://127.0.0.1:8000/api/plan/list')
+    //     axios.post('')
     //     .then(res=>{
     //         // this.setState({
     //         //     herolist: res.data

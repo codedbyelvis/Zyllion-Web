@@ -7,7 +7,7 @@ export default class AccountDetails extends Component {
 
     render() {
         return (
-            <StripeProvider apiKey="pk_test_x5ZKyZs0RsUEP9y8mf51jgVx">
+            <StripeProvider apiKey="">
       <MyStoreCheckout />
     </StripeProvider>
     );
