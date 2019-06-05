@@ -10,16 +10,29 @@ export default class Plans extends Component {
 
     // need to be careful with CORS//
 
-    // componentDidMount(){
-    //     axios.get('http://127.0.0.1:8000/api/plan/list')
-    //     .then(res=>{
-    //         // this.setState({
-    //         //     herolist: res.data
-    //         // });
-    //         console.log('connected!');
-    //         console.log(res.data);
-    //     })
-    // }
+    componentDidMount(){
+        axios.get('http://127.0.0.1:8000/plans/list', {
+            headers: {
+                crossdomain: true ,
+                'Access-Control-Allow-Origin': '*',
+                "Access-Control-Allow-Methods":"GET",
+                "Access-Control-Allow-Headers":"Content-Type",
+                "Access-Control-Allow-Credentials":"true",
+                'Content-Type': 'application/json',
+              },
+            //   proxy: {
+            //     host: '50.197.245.139',
+            //     port: 3000
+            //   }
+        })
+        .then(res=>{
+            // this.setState({
+            //     herolist: res.data
+            // });
+            console.log('connected!');
+            console.log(res.data);
+        })
+    }
 
     render() {
         return (
@@ -28,18 +41,64 @@ export default class Plans extends Component {
                 <div className='plansTitle'><h1>What type of plan is right for you?</h1></div>
                 <h3 className='plansMessage'>Allow vendors to self-onboard, capture invoices with OCR technology, 
                     and make payments for virtually zero transaction fees.</h3>
+
                 <div className="plan1">
+                <h3>Vendor Onboarding</h3>
+                <h4>First Month Free</h4>
+                <p>then</p>
+                <p><strong>$9.00</strong> per user/month</p>
+                <p>Secure and seamless way to onboard vendors</p>
+                <h4>Features:</h4>
+                    <p>Vendors self onboard</p>
+                    <p>Securely capture bank account and routing numbers</p>
+                    <p>Electronically collect W9 info from vendors</p>
+                    <p>Collect vendor payment terms </p>
+                    <p>Electronically collect vendor contact info </p>
+                <h4>Integrations:</h4>
+                    <p>Quickbooks Online</p>
+                <h4>Users:</h4>
+                <p>1 - 5</p>
+                <Link to="/signup"><button>Signup</button></Link>
+                </div>
+
+                <div className="plan2">
                 <h3>Basic</h3>
                 <h4>First Month Free</h4>
                 <p>then</p>
-                <p><strong>$59</strong> per user/month</p>
+                <p><strong>$59.99</strong> per user/month</p>
                 <p>Basic starter plan for small businesses and contractors</p>
                 <h4>Features:</h4>
+                    <p>Everything in Vendor Onboarding</p>
+                    <p>Vendor and customer network</p>
+                    <p>Decentralized storage of sensative Vendor data</p>
+                    {/* <p>Unlimited document storage</p> */}
+                    <p>Automated Invoice data extraction</p>
+                    <p>Blockchain payment processing</p>
                     {/* <p>Choose either:</p> */}
-                    <p>Automated Accounts Payable</p>
                     {/* <p><strong>OR</strong></p>
                     <p>Automated Accounts Recievable</p> */}
                 <h4>Integrations:</h4>
+                    <p>Quickbooks Online</p>
+                <h4>Users:</h4>
+                <p>1 - 5</p>
+                <Link to="/signup"><button>Coming Soon</button></Link>
+                </div>
+        <div className='planCover2'></div>
+
+
+
+                {/* <div className="plan1">
+                <h3>Basic</h3>
+                <h4>First Month Free</h4>
+                <p>then</p>
+                <p><strong>$59.99</strong> per user/month</p>
+                <p>Basic starter plan for small businesses and contractors</p>
+                <h4>Features:</h4>
+                    <p>Automated Accounts Payable</p> */}
+                    {/* <p>Choose either:</p> */}
+                    {/* <p><strong>OR</strong></p>
+                    <p>Automated Accounts Recievable</p> */}
+                {/* <h4>Integrations:</h4>
                     <p>Quickbooks Online</p>
                 <h4>Users:</h4>
                 <p>1 - 5</p>
@@ -52,7 +111,7 @@ export default class Plans extends Component {
                 <h3>Corporate</h3>
                 <h4>First Month Free</h4>
                 <p>then</p>
-                <p><strong>$99</strong> Per Month/User</p>
+                <p><strong>$99.99</strong> Per Month/User</p>
                 <p>The perfect plan for an established mid-sized company</p>
                 <h4>Features:</h4>
                     <p>Automated Accounts Payable</p>
@@ -65,9 +124,9 @@ export default class Plans extends Component {
                     <p>Xero</p>
                 <h4>Users:</h4>
                 <p>1 - 10</p>
-                <h6>*Plus a free account to set permissions</h6>
-                {/* deleted link tag */}
-                <button className='button2'>Signup</button>
+                <h6>*Plus a free account to set permissions</h6> */}
+                {/***** deleted link tag *****/}
+                {/* <button className='button2'>Signup</button>
                 </div>
 
         <div className='planCover3'></div>
@@ -89,10 +148,10 @@ export default class Plans extends Component {
                     <p>QuickBooks Enterprise</p>
                 <h4>Users:</h4>
                 <p>3 - 150</p>
-                <h6>*Plus a free account to set permissions</h6>
-                {/* deleted link tag */}
-                <button className='button2'>Signup</button>
-                </div>
+                <h6>*Plus a free account to set permissions</h6> */}
+                {/***** deleted link tag *****/}
+                {/* <button className='button2'>Signup</button> */}
+                {/* </div> */}
                 
                 {/* <div className='compareButton'><Link to="/compare"><button>Compare</button></Link></div> */}
                 

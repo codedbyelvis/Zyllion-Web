@@ -5,6 +5,9 @@ import App from './App';
 // import {unregister} from './registerServiceWorker';
 import store from './store';
 import {Provider} from 'react-redux';
+import reducer from '../src/ducks/reducer';
+
+// const store = createStore(reducer);
 
 ReactDOM.render(
 <Provider store = {store}>

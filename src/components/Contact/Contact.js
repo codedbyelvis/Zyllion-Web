@@ -1,108 +1,43 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import { render } from "react-dom";
+import FormContainer from "./Contact-FC";
+import { connect } from 'react-redux';
+import {getUser, refresh} from '../../ducks/reducer';
 import './Contact.css';
-export default class Contact extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          firstName: '',
-          lastName: '',
-          email: '',
-          subject: '',
-          message: ''
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.baseState=this.state;
-      }
-
-      componentDidMount() {
-          window.scrollTo(0, 0);
-        }
-        
-        trying() {
-            console.log('please');
-        }
-
-      resetForm() {  
-        console.log('por favor');
-        document.getElementById('contact-form').reset();
-        }
-        
-        resetform = () => {
-            this.setState(this.baseState)
-          };
-
-          Work() {
-              console.log('zerror');
-            this.handleSubmit().catch((error) => {
-                console.log(error);
-                console.log('error');
-            });
-            console.log('berror');
-            this.resetForm().catch((error) => {
-                console.log(error);
-                console.log('terror');
-            });
-          }
+class Contact extends Component {
     
-      handleChange (e) {
-        this.setState({ [e.target.name]: e.target.value });
-      }
-
-      async handleSubmit(e) {
-          e.preventDefault();
-
-          const { firstName, lastName, email, subject, message } =this.state;
-
-
-          const form = await axios.post('/api/form', {
-              firstName,
-              lastName,
-              email,
-              subject,
-              message
-          })
-      }
-      
-    render() {
-        return (
-            <div className='Contact'>
-                <h1 className='ContactTitle'>Contact</h1>
-                <h3 className='Contactinfo'>Questions about blockchain or when we plan to launch? No problem. 
-                    Drop us a line and we will get back to you.</h3>
-            <form id='contact-form' onSubmit={this.handleSubmit}>
-                <div className='AboutInput'>
-                <label>First Name</label></div>
-                <div>
-                <input type="text" name="firstName" onChange={this.handleChange} required/></div>
-
-                <div>
-                <label>Last Name</label></div>
-                <div>
-                <input type="text" name="lastName" onChange={this.handleChange} required/></div>
-
-                <div>
-                <label>Email</label></div>
-                <div>
-                <input type="email" name="email" onChange={this.handleChange} required/></div>
-
-                <div>
-                <label>Subject</label></div>
-                <div>
-                <input type="text" name="subject" onChange={this.handleChange} required/></div>
-
-                <div>
-                <label>Message</label></div>
-                <div>
-                <input type="textarea" name="message" onChange={this.handleChange} required/></div>
-
-                <div>
-                {/* <button onClick={setTimeout(this.resetForm, 3000)}>Submit</button> */}
-                <input type="submit" id='submit' value="Submit" action='this.resetForm'/></div>
-
-            </form>
-            </div> 
-        )
-    }
+  componentDidMount() {
+    window.scrollTo(0, 0);
 }
+
+    render() {
+    return (
+      <div className="Contact">
+      <h1 className='ContactTitle'>Contact</h1>
+      <h3 className='ContactInfo'>Questions about blockchain or when we plan to launch? No problem. 
+          Drop us a line and we will get back to you.</h3>
+          <div className="CFormz"><FormContainer /></div>
+        {/* <div className="transform"><FormContainer /></div> */}
+
+      <div className="Our">
+        <h3 className='Office'>Our Office</h3>
+        <p className='Directions'>
+          <a href="https://www.google.com/maps/dir/36.2340352,-86.3019008/41+Peabody+St,+Nashville,+TN+37210/@36.2123519,-86.8154885,10z/
+          data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x88646643b04dfbdb:0x17986b54dd9208f!2m2!1d-86.7685426!2d36.1577981"
+          blank="Adress">41 Peabody Street
+          Nashville, TN, 37210
+          United States
+        </a></p>
+      </div>
+    </div>
+    );
+  }
+}
+
+// render(<Contact />, document.getElementById("root"));
+
+function mapStateToProps( state ) {
+  return state;
+}
+
+export default connect( mapStateToProps, {getUser, refresh} )( Contact );

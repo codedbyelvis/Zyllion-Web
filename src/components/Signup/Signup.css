@@ -1,8 +1,211 @@
 .Signup {
-    height: 100%;
+    height: 170vh;
+    width: 100vw;
     display: grid;
-    /* grid-template-rows: 400px 400px 400px;
-    grid-template-columns: 400px 400px 400px; */
+    grid-template-rows: 1fr 1fr 7fr 1fr;
     text-align: center;
     align-items: center;
+    justify-items: center;
+    background-color: rgb(102,196,205);
+    font-size: 30px;
+    font-family: "futura-pt";
 }
+
+.signupTitle {
+    justify-self: center;
+    position: center;
+    /* margin-top: 50vh; */
+}
+
+.signupAll {
+    margin-top: 10vh;
+    margin-bottom: 0vh;
+    /* margin-left: 250px; */
+    /* align-self: center;
+    justify-self: center; */
+    position: center;
+}
+
+.Formz {
+    width: 200px;
+    /* margin-left: 37%;
+    margin-right: 37%; */
+    
+}
+.UpFormz {
+    text-align: center;
+    margin: auto;
+    /* width: 200px; */
+    /* margin-left: 37%;
+    margin-right: 37%; */
+    
+}
+
+.form-group {
+    display: grid;
+    margin-bottom: 10px;
+    margin-left: 75px;
+    width: 300px;
+    /* grid-gap: 20px; */
+}
+
+#state {
+    width: 228px;
+    height: 45px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+label {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+input[type=text] {
+    margin-top: 20px;
+    /* margin-right: 200px; */
+    width: 200px;
+    /* margin-top: 20px; */
+    /* width: 20%; */
+    align-items: start;
+    justify-items: start;
+  }
+input[type=email] {
+    margin-top: 20px;
+    /* margin-right: 200px; */
+    width: 200px;
+    /* margin-top: 20px; */
+    /* width: 20%; */
+    align-items: start;
+    justify-items: start;
+  }
+input[type=select] {
+    margin-top: 20px;
+    /* margin-right: 200px; */
+    /* margin-top: 20px; */
+    /* width: 20%; */
+    align-items: start;
+    justify-items: start;
+  }
+
+input[type=password] {
+    margin-top: 20px;
+    /* margin-right: 200px; */
+    width: 200px;
+    /* margin-top: 20px; */
+    /* width: 20%; */
+  }
+
+input[type=radio] {
+    margin-top: 20px;
+    /* margin-right: 200px;
+    width: 200px; */
+    /* margin-top: 20px; */
+    /* width: 20%; */
+  }
+
+input, textarea {
+margin-top: 20px;
+padding: 1em;
+width: 600px;
+}
+
+.Signup button {
+	/* -moz-box-shadow: 0px 4px 0px 1px #dbd0db;
+	-webkit-box-shadow: 0px 4px 0px 1px #dbd0db;
+	box-shadow: 0px 4px 0px 1px #dbd0db; */
+	background-color:#378ee5;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #3281d1;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:15px 76px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+    margin-top: 50px;
+}
+.Signup button:hover {
+	background-color:#167de3;
+}
+.Signup button:active {
+	position:relative;
+	top:1px;
+}
+
+
+.Upcontainer-fluid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(8, 1fr);
+    /* grid-column-gap: 100px; */
+    text-align: left;
+    justify-self: center;
+    /* margin-right: 200px; */
+    /* width: 700px; */
+    margin: auto;
+}
+
+
+.Upcn {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 1/1;
+}
+.Upfn {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.Upln {
+    grid-column: 2/2;
+    grid-row: 2/3;
+}
+.Upem {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+.Uppn {
+    grid-column: 2/2;
+    grid-row: 3/4;
+}
+.Uppw {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+.Upcp {
+    grid-column: 2/2;
+    grid-row: 4/5;
+}
+.Upa1 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+}
+.Upa2 {
+    grid-column: 2/2;
+    grid-row: 5/6;
+}
+.Upct {
+    grid-column: 1/2;
+    grid-row: 6/7;
+}
+.Upst {
+    grid-column: 2/2;
+    grid-row: 6/7;
+}
+.Upzp {
+    grid-column: 1/2;
+    grid-row: 7/8;
+}
+.Upcy {
+    grid-column: 2/2;
+    grid-row: 7/8;
+}      
+.Upnu {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 8/9;
+}      
