@@ -1,7 +1,7 @@
 const express = require('express'),
     bodyParser = require('body-parser'),
     nodemailer = require('nodemailer'),
-    stripe = require("stripe")("sk_test_tNfMw1CPMohLAcwCGlF2Tfic");
+    stripe = require("stripe")("");
 
 const app = express();
 const InRedirect= "http://localhost:3000/account";
